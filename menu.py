@@ -63,7 +63,7 @@ def menu(HashTable):
             option = int(input('Escolha uma das opções:\n'))
         except: print('Só são aceitos caracteres numéricos. ')
         if (option == 1):
-            option_1()
+            option_1(HashTable)
 
         elif(option == 2):
             try:
