@@ -14,6 +14,9 @@ def reader_taxi(HashTable):
             lograd = str(row[4])
             num = str(row[5])
             tel = str(row[3])
-            tupla_aux =(lat, lon, lograd,num, tel)
+            if(lat == 1.0):
+                pass
+            else:
+                tupla_aux =(lat, lon, lograd,num, tel)
 
             HashTable[codigo]=tupla_aux
