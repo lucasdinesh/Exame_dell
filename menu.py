@@ -9,22 +9,29 @@ def print_menu():
           '4. Buscar pontos por logradouro \n',
           '5. Terminar o programa \n'
           )
+    
+    
 def option_1(HashTable):
     for i in range(len(HashTable)):
         if (HashTable[i] == ''):
             pass
         else:
             print('Endereço:', HashTable[i][2], HashTable[i][3], f'Telefone: {HashTable[i][3]} ')
+            
+            
 def option_2():
         print('Informe sua localização: ')
         input_lat = float(input('Digite sua latitude:').replace(',', '.'))
         input_lon = float(input('Digite sua longitude:').replace(',', '.'))
         return input_lat, input_lon
 
+    
+    
 def option_3(HashTable, lat, lon):
+    #try, except caso a latitude e longitude da opção 2 não for enviada.
     try:
         distance_tables = haversine(lat, lon, HashTable)
-        distance_tables.sort(key=lambda x: x[1])
+        distance_tables.sort(key=lambda x: x[1])  #metodo sort para ordenamento das distancias
         print('Os pontos mais proximos são:')
         for pontos in range(3):
             codigo = distance_tables[pontos][0]
@@ -32,6 +39,8 @@ def option_3(HashTable, lat, lon):
                 f'  Distancia entre usuario e ponto: {(distance_tables[pontos][1])}')
     except:
         print('Digite uma latide e uma Longitude na opção 2')
+        
+        
 
 def option_4(HashTable):
         have_lograd = False
@@ -50,7 +59,9 @@ def option_4(HashTable):
 def menu(HashTable):
     while(True):
         print_menu()
-        option = int(input('Escolha uma das opções:\n'))
+        try:
+            option = int(input('Escolha uma das opções:\n'))
+        except: print('Só são aceitos caracteres numéricos. ')
         if (option == 1):
             option_1()
 
