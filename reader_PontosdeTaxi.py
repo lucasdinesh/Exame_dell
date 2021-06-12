@@ -8,7 +8,7 @@ def reader_taxi(HashTable):
 
         for row in csv_reader:
 
-            lat = float(row[6].replace(',','.')) #tratando o objeto recebido, de virgula para ponto
+            lat = float(row[6].replace(',','.')) #tratamento do objeto recebido, de virgula para ponto
             lon = float(row[7].replace(',','.'))
             codigo = int(row[1])
             lograd = str(row[4])
