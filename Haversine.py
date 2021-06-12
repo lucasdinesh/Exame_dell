@@ -22,4 +22,4 @@ def haversine(lat1, lon1, HashTable):
             aux_table.append(aux_tuple)
 
 
-    return aux_table
+    return aux_table #devolve um lista de tuplas contendo (codigo, distancia entre ponto e usuario)
