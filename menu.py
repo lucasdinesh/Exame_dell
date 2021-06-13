@@ -39,7 +39,6 @@ def option_3(HashTable, lat1, lon1):
                 lat2= HashTable[codigo][0]
                 lon2= HashTable[codigo][1]
                 aux = haversine(lat1,lon1,lat2,lon2,codigo)
-                print(aux)
                 distance_tables.append(aux)
                 
         distance_tables.sort(key=lambda x: x[1])  #metodo sort para ordenamento das distancias
